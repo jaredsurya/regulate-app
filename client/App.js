@@ -10,6 +10,20 @@ export default function App() {
   );
 }
 
+// 1. Route interal pages somehow, learn this
+// 2. figure out how to hit rails backend
+// 3. ERM for backend, users, journal, meditation
+// 4. Create login or home page for styling practice
+// 5. complete some wireframing
+// 6. verify that Expo is working
+
+// Jared - 
+// Styling, addition of libraries or CSS
+
+// Igor -
+// Route backend and hit API's
+// Maybe figure out internal routing, maybe react-router? or native equivalent
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
