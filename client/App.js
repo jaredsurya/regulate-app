@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Regulate app! with wire frames ARRRRRRRR!!!</Text>
+      <Text>Regulate app! with wire frames ARRRRRRRR!!! overboardnoreunerovner</Text>
       <StatusBar style="auto" />
     </View>
   );
