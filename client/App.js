@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import Auth from './components/Auth';
 
 export default function App() {
 
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Auth />
       <Text>Welcome to REGULATE.</Text>
       <Text>Please find our buttons for Meditation and Journaling</Text>
       <Button title="Press Me!" onPress={handleButtonPress} />
@@ -32,6 +34,8 @@ export default function App() {
 // Route backend and hit API's
 // Maybe figure out internal routing, maybe react-router? or native equivalent
 
+
+//should we make a dedicated css stylesheet? how to integrate it with app?
 const styles = StyleSheet.create({
   container: {
     flex: 1,
