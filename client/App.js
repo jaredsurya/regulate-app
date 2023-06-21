@@ -12,9 +12,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Auth />
-      <Text>Welcome to REGULATE.</Text>
-      <Text>Please find our buttons for Meditation and Journaling</Text>
-      <Button title="Press Me!" onPress={handleButtonPress} />
+      <Text>This is the APP component.</Text>
+      <Text>Blah Blah Blah Blah Blah</Text>
+      <Button title="Random button!" onPress={handleButtonPress} />
       <StatusBar style="auto" />
     </View>
   );

@@ -9,6 +9,8 @@ export default function Auth() {
   const handleSignIn = () => {
     // Perform sign-in logic using the email and password
     console.log('Sign in:', email, password);
+    setEmail('')
+    setPassword('')
   };
 
   return (
