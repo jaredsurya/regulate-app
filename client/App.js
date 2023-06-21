@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
+
+  const handleButtonPress = () => {
+    // Action to perform when the button is pressed
+    console.log('Button pressed!');
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Regulate app! with wire frames ARRRRRRRR!!! overboardnoreunerovner</Text>
+      <Text>Welcome to REGULATE.</Text>
+      <Text>Please find our buttons for Meditation and Journaling</Text>
+      <Button title="Press Me!" onPress={handleButtonPress} />
       <StatusBar style="auto" />
     </View>
   );
