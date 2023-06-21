@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import Modal from 'react-native-modal';
 
 const NavbarWithMenu = () => {
@@ -9,15 +9,34 @@ const NavbarWithMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const handleUserPress = () => {
+    console.log("user pressed")
+
+    // have state variable which toggles showing of a second separate modal for user info, including history and account
+  }
+
   const handleMenuItemPress = () => {
     // Action to perform when a menu item is pressed
     console.log('Menu item pressed!');
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container}> 
+    {/* how to create space below the top cell phone info menu bar? */}
       <TouchableOpacity onPress={handleMenuToggle}>
-        <Text style={styles.menuButton}>MENU</Text>
+      <Image
+          source={require('client/assets/menu.png')} // Replace with your menu icon image
+          style={styles.menuButton}
+        />
+      </TouchableOpacity>
+      {/* find a way to make space, separating both buttons to upper corners */}
+      <TouchableOpacity onPress={handleUserPress}>
+        <View style={styles.userButton}>
+          <Image
+            source={require('client/assets/240px-Dharma_wheel.png')} // Replace with your user icon image
+            style={styles.userIcon}
+          />
+        </View>
       </TouchableOpacity>
 
       <Modal
@@ -71,10 +90,28 @@ const styles = StyleSheet.create({
     marginBottom: 'auto',
     alignItems: 'center', // Align items to center horizontally
   },
+  menuButton: {
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
+  },
   menuItem: {
     fontSize: 20,
     paddingVertical: 8,
     fontWeight: 'bold',
+  },
+  userButton: {
+    width: 24,
+    height: 24,
+    borderRadius: 20,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  userIcon: {
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
   },
 });
 
