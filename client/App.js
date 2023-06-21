@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import Auth from './components/Auth';
+import Navbar from './components/Navbar';
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Navbar />
       <Auth />
       <Text>This is the APP component.</Text>
       <Text>Blah Blah Blah Blah Blah</Text>
