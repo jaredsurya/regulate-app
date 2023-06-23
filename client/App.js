@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,8 +13,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Auth" component={Auth} />
+        <Stack.Screen name="Home" component={Home} 
+          options={{ headerTitle: (props) => <Navbar {...props} /> }}
+        />
+        <Stack.Screen name="Auth" component={Auth} options={{ title: 'Overview' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

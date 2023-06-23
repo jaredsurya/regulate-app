@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState, useCallback} from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 
+import Navbar from './Navbar';
+
 export default function Home() {
   const [statusBarToggle, setStatusBarToggle] = useState(true)
 
@@ -24,6 +26,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+          <Navbar />
       <Text>This is the APP component.</Text>
       <Text>Blah Blah Blah Blah Blah</Text>
       <Button title="Random button!" onPress={handleButtonPress} />

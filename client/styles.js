@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     marginTop: 15,
+    backgroundColor: 'hsla(330, 1%, 43%, 1)'
   },
   menuButtonContainer: {
     position: "absolute",
