@@ -14,8 +14,8 @@ export default function AppScreens() {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
-      <Stack.Screen name="MeditationHome" component={MeditationHome} />
+      <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
+      {/* <Stack.Screen name="MeditationHome" component={MeditationHome} />
       <Stack.Screen name="JournalHome" component={JournalHome} /> */}
     </Stack.Navigator>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import RadialGradient from 'react-native-radial-gradient';
+
 import { View, TouchableOpacity, Text, StyleSheet, Image, TextInput } from "react-native";
 
 
@@ -7,11 +7,7 @@ export default function Welcome() {
   return (
     <Text>Welcome to login</Text>
 //     <View style={styles.container}>
-//     {/* <RadialGradient style={{width:200,height:200}}
-//                         colors={['black','green','blue','red']}
-//                         stops={[0.1,0.4,0.3,0.75]}
-//                         center={[100,100]}
-//                         radius={200}> */}
+
 //       <Text>REGULATE</Text>
 //       <Text>Please sign in below.</Text>
 //       <TextInput
@@ -30,7 +26,7 @@ export default function Welcome() {
 //       />
 //       <Button title="Sign In" onPress={handleSignIn} />
 //       <StatusBar style="auto" />
-//  {/* </RadialGradient> */}
+
 //     </View>
   );
 };
