@@ -1,48 +1,16 @@
-import { StyleSheet, Button } from 'react-native';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider } from "react-redux";
+import store from "./src/state-managment/store";
 
 import Home from './components/Home'
-import Auth from './components/Auth';
-import Navbar from './components/Navbar';
 
 export default function App() {
 
-  const Stack = createNativeStackNavigator();
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} 
-          options={{ headerTitle: (props) => <Navbar {...props} /> }}
-        />
-        <Stack.Screen name="Auth" component={Auth} options={{ title: 'Overview' }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
-}
-
-// 1. Route interal pages somehow, learn this
-// 2. figure out how to hit rails backend
-// 3. ERM for backend, users, journal, meditation
-// 4. Create login or home page for styling practice
-// 5. complete some wireframing
-// 6. verify that Expo is working
-
-// Jared - 
-// Styling, addition of libraries or CSS
-
-// Igor -
-// Route backend and hit API's
-// Maybe figure out internal routing, maybe react-router? or native equivalent
+};
 
 
-//should we make a dedicated css stylesheet? how to integrate it with app?
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
