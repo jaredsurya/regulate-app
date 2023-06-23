@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './components/Home'
 import Auth from './components/Auth';
+import Navbar from './components/Navbar';
 
 export default function App() {
 
