@@ -22,36 +22,8 @@ export default function Auth() {
     setPassword('')
   };
 
-
-  <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} 
-          options={{ headerTitle: (props) => <Navbar {...props} /> }}
-        />
-        <Stack.Screen name="Auth" component={Auth} options={{ title: 'Overview' }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
   return (
-    <View style={styles.container}>
-      <Text>Welcome to REGULATE.</Text>
-      <Text>Please sign in below.</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        onChangeText={text => setEmail(text)}
-        value={email}
-        autoCapitalize="none"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        onChangeText={text => setPassword(text)}
-        value={password}
-        secureTextEntry
-      />
-      <Button title="Sign In" onPress={handleSignIn} />
-      <StatusBar style="auto" />
-    </View>
+
   );
 }
 

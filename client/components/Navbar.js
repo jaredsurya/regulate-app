@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import Modal from "react-native-modal";
-import { styles } from "../styles";
+import { styles } from "../styles/styles";
 
 const NavbarWithMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);

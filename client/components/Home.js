@@ -1,3 +1,4 @@
+// functional imports
 import React, {useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
