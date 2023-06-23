@@ -4,8 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //component imports
 import WelcomeUser from './WelcomeUser'
-import MeditateHome from './MeditateHome'
-import JournalHome from './JournalHome'
+import MeditationHome from './Meditation/MeditationHome'
+import JournalHome from './Journal/JournalHome'
 
 export default function AppScreens() {
   //stack navigator
@@ -14,9 +14,9 @@ export default function AppScreens() {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
-      <Stack.Screen name="MeditateHome" component={MeditateHome} />
-      <Stack.Screen name="JournalHome" component={JournalHome} />
+      {/* <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
+      <Stack.Screen name="MeditationHome" component={MeditationHome} />
+      <Stack.Screen name="JournalHome" component={JournalHome} /> */}
     </Stack.Navigator>
   );
 };

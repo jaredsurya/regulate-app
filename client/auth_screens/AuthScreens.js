@@ -13,9 +13,9 @@ export default function AuthScreens() {
   
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }} >
-      <Stack.Screen name="welcome_screen" component={Welcome} />
+      {/* <Stack.Screen name="welcome" component={Welcome} />
       <Stack.Screen name="login" component={Login} />
-      <Stack.Screen name="signUp" component={SignUp} />
+      <Stack.Screen name="signUp" component={SignUp} /> */}
     </Stack.Navigator>
   );
 };

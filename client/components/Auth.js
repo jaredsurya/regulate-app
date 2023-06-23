@@ -23,7 +23,9 @@ export default function Auth() {
   };
 
   return (
-
+    <View>
+      <Text>Auth</Text>
+    </View>
   );
 }
 
