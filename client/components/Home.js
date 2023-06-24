@@ -18,16 +18,12 @@ function Home() {
 
   return (
     <NavigationContainer>
+        {/* <View style={styles.container}> */}
       {/* Need to add async for hitting backend, while autlogin is running, display loading screen */}
-        <View style={styles.background}>
-        {/* <Text style={styles.text}>stuff</Text>
-        <Button title='Click me'> click this </Button> */}
-          {screenToggle ?
-            <AppScreens /> 
-          : 
-            <AuthScreens />
-          }
-        </View>
+        {/* <Text style={styles.text}>stuff</Text> */}
+        {/* <Button title='Click me'> click this </Button> */}
+          {screenToggle ? <AppScreens /> : <AuthScreens />}
+        {/* </View> */}
     </NavigationContainer>
   );
 };
@@ -39,14 +35,13 @@ export default greyBackground(Home);
 </View> */}
 
 const styles = StyleSheet.create({
-  background: {
+  container: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 8,
     paddingHorizontal: 16,
     marginTop: 15,
-    backgroundColor: 'hsla(330, 1%, 43%, 1)'
   },
   text: {
     fontSize: 24,

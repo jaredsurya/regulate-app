@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function greyBackground(Screen) {
-  
+  console.log("rendered background")
   return (props) => (
       <LinearGradient
         colors={['#333333', '#666666', '#333333']}
@@ -17,3 +17,5 @@ export default function greyBackground(Screen) {
     </LinearGradient>
   );
 };
+
+// export default greyBackground;
