@@ -2,37 +2,37 @@
 import React from 'react';
 // import { Provider } from "react-redux";
 // import store from "./src/state-managment/store";
-import * as SplashScreen from 'expo-splash-screen';
+// import * as SplashScreen from 'expo-splash-screen';
 
 //component imports
 import Home from './components/Home';
 
 //styling imports
-import {
-  useFonts,
-  MavenPro_400Regular,
-  MavenPro_500Medium,
-  MavenPro_600SemiBold,
-  MavenPro_700Bold,
-  MavenPro_800ExtraBold,
-  MavenPro_900Black,
-} from '@expo-google-fonts/maven-pro';
+// import {
+//   useFonts,
+//   MavenPro_400Regular,
+//   MavenPro_500Medium,
+//   MavenPro_600SemiBold,
+//   MavenPro_700Bold,
+//   MavenPro_800ExtraBold,
+//   MavenPro_900Black,
+// } from '@expo-google-fonts/maven-pro';
 
 // Keep the splash screen visible while we fetch resources
-SplashScreen.preventAutoHideAsync();
+// SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
-    MavenPro_400Regular,
-    MavenPro_500Medium,
-    MavenPro_600SemiBold,
-    MavenPro_700Bold,
-    MavenPro_800ExtraBold,
-    MavenPro_900Black,
-  });
+  // let [fontsLoaded] = useFonts({
+  //   MavenPro_400Regular,
+  //   MavenPro_500Medium,
+  //   MavenPro_600SemiBold,
+  //   MavenPro_700Bold,
+  //   MavenPro_800ExtraBold,
+  //   MavenPro_900Black,
+  // });
 
-  let fontSize = 24;
-  let paddingVertical = 6;
+  // let fontSize = 24;
+  // let paddingVertical = 6;
 
   // if (!fontsLoaded) {
   //   return <AppLoading />;

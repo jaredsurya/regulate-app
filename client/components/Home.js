@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 //component imports
 import AppScreens from '../app_screens/AppScreens';
 import AuthScreens from '../auth_screens/AuthScreens';
-import greyBackground from '../styles/greyBackground';
+import GreyBackground from '../styles/GreyBackground';
 
 //screen toggle is just for viewing auth or app screens
 //need to implement redux store and loading or home screen while user is being loaded
@@ -18,17 +18,20 @@ function Home() {
 
   return (
     <NavigationContainer>
-        {/* <View style={styles.container}> */}
+    <GreyBackground>
+
+        <View style={styles.container}>
       {/* Need to add async for hitting backend, while autlogin is running, display loading screen */}
-        {/* <Text style={styles.text}>stuff</Text> */}
+        <Text style={styles.text}>stuff</Text>
         {/* <Button title='Click me'> click this </Button> */}
           {screenToggle ? <AppScreens /> : <AuthScreens />}
-        {/* </View> */}
+        </View>
+    </GreyBackground>
     </NavigationContainer>
   );
 };
 
-export default greyBackground(Home);
+export default Home;
 
 {/* 
   <Text style={{ fontSize: 24, color: '#FFF' }}>Radial Gradient Background</Text>
