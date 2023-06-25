@@ -1,48 +1,99 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Auth from './components/Auth';
-import Navbar from './components/Navbar';
+//functional imports
+import React from 'react';
+// import { Provider } from "react-redux";
+// import store from "./src/state-managment/store";
+// import * as SplashScreen from 'expo-splash-screen';
+
+//component imports
+import Home from './components/Home';
+
+//styling imports
+// import {
+//   useFonts,
+//   MavenPro_400Regular,
+//   MavenPro_500Medium,
+//   MavenPro_600SemiBold,
+//   MavenPro_700Bold,
+//   MavenPro_800ExtraBold,
+//   MavenPro_900Black,
+// } from '@expo-google-fonts/maven-pro';
+
+// Keep the splash screen visible while we fetch resources
+// SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  // let [fontsLoaded] = useFonts({
+  //   MavenPro_400Regular,
+  //   MavenPro_500Medium,
+  //   MavenPro_600SemiBold,
+  //   MavenPro_700Bold,
+  //   MavenPro_800ExtraBold,
+  //   MavenPro_900Black,
+  // });
 
-  const handleButtonPress = () => {
-    // Action to perform when the button is pressed
-    console.log('Button pressed!');
-  };
+  // let fontSize = 24;
+  // let paddingVertical = 6;
 
-  return (
-    <View style={styles.container}>
-      <Navbar />
-      <Auth />
-      <Text>This is the APP component.</Text>
-      <Text>Blah Blah Blah Blah Blah</Text>
-      <Button title="Random button!" onPress={handleButtonPress} />
-      <StatusBar style="auto" />
-    </View>
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // } else {
+    return (
+    // <Provider store={store}>
+      <Home />
+    // </Provider>
   );
-}
-
-// 1. Route interal pages somehow, learn this
-// 2. figure out how to hit rails backend
-// 3. ERM for backend, users, journal, meditation
-// 4. Create login or home page for styling practice
-// 5. complete some wireframing
-// 6. verify that Expo is working
-
-// Jared - 
-// Styling, addition of libraries or CSS
-
-// Igor -
-// Route backend and hit API's
-// Maybe figure out internal routing, maybe react-router? or native equivalent
+// };
+};
 
 
-//should we make a dedicated css stylesheet? how to integrate it with app?
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+//going to add this once routing is good, its the splash screen loading logic
+//Ill add user and other stuff form the backend to this so it looks seemless on load
+
+// SplashScreen.preventAutoHideAsync();
+
+// export default function App() {
+//   const [appIsReady, setAppIsReady] = useState(false);
+
+//   useEffect(() => {
+//     async function prepare() {
+//       try {
+//         // Pre-load fonts, make any API calls you need to do here
+//         await Font.loadAsync(Entypo.font);
+//         // Artificially delay for two seconds to simulate a slow loading
+//         // experience. Please remove this if you copy and paste the code!
+//         await new Promise(resolve => setTimeout(resolve, 2000));
+//       } catch (e) {
+//         console.warn(e);
+//       } finally {
+//         // Tell the application to render
+//         setAppIsReady(true);
+//       }
+//     }
+
+//     prepare();
+//   }, []);
+
+//   const onLayoutRootView = useCallback(async () => {
+//     if (appIsReady) {
+//       // This tells the splash screen to hide immediately! If we call this after
+//       // `setAppIsReady`, then we may see a blank screen while the app is
+//       // loading its initial state and rendering its first pixels. So instead,
+//       // we hide the splash screen once we know the root view has already
+//       // performed layout.
+//       await SplashScreen.hideAsync();
+//     }
+//   }, [appIsReady]);
+
+//   if (!appIsReady) {
+//     return null;
+//   }
+
+//   return (
+//     <View
+//       style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+//       onLayout={onLayoutRootView}>
+//       <Text>SplashScreen Demo! 👋</Text>
+//       <Entypo name="rocket" size={30} />
+//     </View>
+//   );
+// }
