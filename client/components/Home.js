@@ -1,6 +1,6 @@
 // functional imports
 import React, { useState } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { View, TouchableOpacity, Button, Text, StyleSheet, Image, TextInput } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -8,25 +8,31 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AppScreens from '../app_screens/AppScreens';
 import AuthScreens from '../auth_screens/AuthScreens';
 import GreyBackground from '../styles/GreyBackground';
+import WelcomeUser from '../app_screens/WelcomeUser';
 
 //screen toggle is just for viewing auth or app screens
 //need to implement redux store and loading or home screen while user is being loaded
 
+const RegulateTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'hsla(0, 0%, 0%, 0)'
+  }
+}
+
 function Home() {
   //set to true for appscreens and false for authscreens
   const [screenToggle, setScreenToggle] = useState(true);
-
+  console.log('theme from home component', DefaultTheme)
+  // will probably need NativeBase to provide a theme throughout the app
   return (
-    <NavigationContainer>
-    <GreyBackground>
-
-        <View style={styles.container}>
-      {/* Need to add async for hitting backend, while autlogin is running, display loading screen */}
-        <Text style={styles.text}>stuff</Text>
-        {/* <Button title='Click me'> click this </Button> */}
+    <NavigationContainer theme={RegulateTheme}>
+        <GreyBackground>
+      {/* <View style={styles.container}> */}
           {screenToggle ? <AppScreens /> : <AuthScreens />}
-        </View>
-    </GreyBackground>
+      {/* </View> */}
+        </GreyBackground>
     </NavigationContainer>
   );
 };
@@ -39,12 +45,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    marginTop: 15,
+    flex: 1
   },
   text: {
     fontSize: 24,

@@ -4,6 +4,9 @@ import React from 'react';
 // import store from "./src/state-managment/store";
 // import * as SplashScreen from 'expo-splash-screen';
 
+import { View, TouchableOpacity, Button, Text, StyleSheet, Image, TextInput } from "react-native";
+
+
 //component imports
 import Home from './components/Home';
 
@@ -37,10 +40,12 @@ export default function App() {
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // } else {
+    {/* Need to add async for hitting backend, while autlogin is running, display loading screen */}
+     //need to add async for user load as well 
     return (
-    // <Provider store={store}>
+   // <Provider store={store}>
       <Home />
-    // </Provider>
+       // </Provider>
   );
 // };
 };
