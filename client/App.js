@@ -5,49 +5,34 @@ import React from 'react';
 // import * as SplashScreen from 'expo-splash-screen';
 
 import { View, TouchableOpacity, Button, Text, StyleSheet, Image, TextInput } from "react-native";
-
+import AppLoading from 'expo-app-loading';
+import { useFonts, RacingSansOne_400Regular } from '@expo-google-fonts/racing-sans-one';
 
 //component imports
 import Home from './components/Home';
-
-//styling imports
-// import {
-//   useFonts,
-//   MavenPro_400Regular,
-//   MavenPro_500Medium,
-//   MavenPro_600SemiBold,
-//   MavenPro_700Bold,
-//   MavenPro_800ExtraBold,
-//   MavenPro_900Black,
-// } from '@expo-google-fonts/maven-pro';
 
 // Keep the splash screen visible while we fetch resources
 // SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  // let [fontsLoaded] = useFonts({
-  //   MavenPro_400Regular,
-  //   MavenPro_500Medium,
-  //   MavenPro_600SemiBold,
-  //   MavenPro_700Bold,
-  //   MavenPro_800ExtraBold,
-  //   MavenPro_900Black,
-  // });
+  let [fontsLoaded] = useFonts({
+    RacingSansOne_400Regular,
+  });
 
-  // let fontSize = 24;
-  // let paddingVertical = 6;
+  let fontSize = 24;
+  let paddingVertical = 6;
 
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // } else {
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
     {/* Need to add async for hitting backend, while autlogin is running, display loading screen */}
      //need to add async for user load as well 
     return (
-   // <Provider store={store}>
+        // <Provider store={store}>
       <Home />
        // </Provider>
-  );
-// };
+    );
+  };
 };
 
 

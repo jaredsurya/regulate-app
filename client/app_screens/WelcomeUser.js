@@ -1,26 +1,32 @@
 import React from 'react';
 import { View, Button, TouchableOpacity, Text, StyleSheet, Image, TextInput } from "react-native";
-
-
+// import { LinearGradient } from 'expo-linear-gradient';
+import GreyBackground from '../styles/GreyBackground';
 {/* <View style={styles.background}>
 </View> */}
 export default function WelcomeUser() {
   return (
-    <View style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Regulate</Text>
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title='Meditate'
-        style={styles.meditateButton} 
+    <GreyBackground>
+      <View style={styles.container}>
+
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Regulate</Text>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Button title='Meditate'
+            style={styles.meditateButton}
           // onPress={() => navigate to meditate home}
-        />
-        <Button title='Journal' 
-          style={styles.journalButton}
+          />
+          <Button title='Journal'
+            style={styles.journalButton}
           // onPress={() => navigate to journal home}
-        />
+          />
+        </View>
       </View>
-    </View>
+
+    </GreyBackground>
+
   );
 };
 //need to place this container style in greybackground, it will
@@ -31,27 +37,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    // flexDirection: 'column'
   },
   textContainer: {
     flex: 2,
-    flexDirection: 'column',
+    flexDirection: 'row',
     justifyContent: 'center',
     justifyContent: 'space-around',
     alignItems: 'center'
   },
   text: {
-    fontSize: 42,
+    fontSize: 69, //hehe
     fontWeight: 'bold',
     textAlign: 'center',
-    letterSpacing: 4,
-    color: 'hsla(45, 90%, 46%, 1)'
+    letterSpacing: 6,
+    color: 'hsla(45, 90%, 46%, 1)',
+    fontFamily: 'RacingSansOne_400Regular'
   },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // width: '80%',
+    width: '80%',
   },
   meditateButton: {
     textAlign: 'center',
