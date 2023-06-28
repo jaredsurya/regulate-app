@@ -1,9 +1,51 @@
 import React from 'react';
 import { View, Button, TouchableOpacity, Text, StyleSheet, Image, TextInput } from "react-native";
-// import { LinearGradient } from 'expo-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import GreyBackground from '../styles/GreyBackground';
-{/* <View style={styles.background}>
-</View> */}
+
+
+const MeditateButton = ({ onPress, title }) => (
+  <TouchableOpacity onPress={onPress} >
+    <LinearGradient
+      colors={['hsla(29, 100%, 87%, 1)', 'hsla(29, 100%, 47%, 1)', 'hsla(29, 100%, 47%, 1)']}
+      style={buttons.container}
+    >
+      <Text style={buttons.buttonText}>{title}</Text>
+    </LinearGradient>
+  </TouchableOpacity>
+);
+
+const JournalButton = ({ onPress, title }) => (
+  <TouchableOpacity onPress={onPress} >
+    <LinearGradient
+      colors={['hsla(245, 100%, 81%, 1)', 'hsla(245, 100%, 51%, 1)', 'hsla(245, 100%, 51%, 1)']}
+      style={buttons.container}
+    >
+      <Text style={buttons.buttonText}>{title}</Text>
+    </LinearGradient>
+  </TouchableOpacity>
+)
+
+const buttons = StyleSheet.create({
+  container: {
+    elevation: 8,
+    borderRadius: 4,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderWidth: 3,
+    borderColor: 'hsla(0, 0%, 18%, 1)'
+  },
+  buttonText: {
+    fontSize: 18,
+    color: "#hsla(360, 100%, 100%, 0.75)",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
+    fontFamily: 'RacingSansOne_400Regular',
+    letterSpacing: 3,
+  }
+})
+
 export default function WelcomeUser() {
   return (
     <GreyBackground>
@@ -14,15 +56,8 @@ export default function WelcomeUser() {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button title='Meditate'
-            style={styles.meditateButton}
-          // onPress={() => navigate to meditate home}
-          />
-          <Button title='Journal'
-            color: 'hsla(241, 64%, 49%, 1)'
-            style={styles.journalButton}
-          // onPress={() => navigate to journal home}
-          />
+          <MeditateButton title="Meditate" />
+          <JournalButton title="Journal" />
         </View>
       </View>
 
@@ -58,7 +93,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     width: '80%',
   },
@@ -73,4 +108,3 @@ const styles = StyleSheet.create({
     color: 'hsla(241, 64%, 49%, 1)'
   }
 });
-
