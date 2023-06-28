@@ -8,9 +8,9 @@ const MeditateButton = ({ onPress, title }) => (
   <TouchableOpacity onPress={onPress} >
     <LinearGradient
       colors={['hsla(29, 100%, 87%, 1)', 'hsla(29, 100%, 47%, 1)', 'hsla(29, 100%, 47%, 1)']}
-      style={buttons.container}
+      style={styles.buttons}
     >
-      <Text style={buttons.buttonText}>{title}</Text>
+      <Text style={styles.buttonText}>{title}</Text>
     </LinearGradient>
   </TouchableOpacity>
 );
@@ -19,34 +19,14 @@ const JournalButton = ({ onPress, title }) => (
   <TouchableOpacity onPress={onPress} >
     <LinearGradient
       colors={['hsla(245, 100%, 81%, 1)', 'hsla(245, 100%, 51%, 1)', 'hsla(245, 100%, 51%, 1)']}
-      style={buttons.container}
+      style={styles.buttons}
     >
-      <Text style={buttons.buttonText}>{title}</Text>
+      <Text style={styles.buttonText}>{title}</Text>
     </LinearGradient>
   </TouchableOpacity>
 )
 
-const buttons = StyleSheet.create({
-  container: {
-    elevation: 8,
-    borderRadius: 4,
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    borderWidth: 3,
-    borderColor: 'hsla(0, 0%, 18%, 1)'
-  },
-  buttonText: {
-    fontSize: 18,
-    color: "#hsla(360, 100%, 100%, 0.75)",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textTransform: "uppercase",
-    fontFamily: 'RacingSansOne_400Regular',
-    letterSpacing: 3,
-  }
-})
-
-export default function WelcomeUser() {
+export default function WelcomeUser({ navigation }) {
   return (
     <GreyBackground>
       <View style={styles.container}>
@@ -54,10 +34,10 @@ export default function WelcomeUser() {
         <View style={styles.textContainer}>
           <Text style={styles.text}>Regulate</Text>
         </View>
-
+{/* add bottom nav tabs and back button and menu at top right */}
         <View style={styles.buttonContainer}>
-          <MeditateButton title="Meditate" />
-          <JournalButton title="Journal" />
+          <MeditateButton title="Meditate" onPress={() => navigation.navigate('MeditationHome')} />
+          <JournalButton title="Journal" onPress={() => navigation.navigate('JournalHome')}/>
         </View>
       </View>
 
@@ -88,7 +68,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 6,
     color: 'hsla(45, 90%, 46%, 1)',
-    fontFamily: 'RacingSansOne_400Regular'
+    fontFamily: 'RacingSansOne_400Regular',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   },
   buttonContainer: {
     flex: 1,
@@ -97,14 +80,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '80%',
   },
-  meditateButton: {
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    color: 'hsla(28, 100%, 60%, 1)',
+  buttons: {
+    elevation: 8,
+    borderRadius: 4,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderWidth: 3,
+    borderColor: 'hsla(0, 0%, 18%, 1)'
   },
-  journalButton: {
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    color: 'hsla(241, 64%, 49%, 1)'
+  buttonText: {
+    fontSize: 18,
+    color: "#hsla(360, 100%, 100%, 0.75)",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
+    fontFamily: 'RacingSansOne_400Regular',
+    letterSpacing: 3,
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 10,
   }
 });
