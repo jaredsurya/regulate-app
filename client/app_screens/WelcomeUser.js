@@ -19,6 +19,7 @@ export default function WelcomeUser() {
           // onPress={() => navigate to meditate home}
           />
           <Button title='Journal'
+            color: 'hsla(241, 64%, 49%, 1)'
             style={styles.journalButton}
           // onPress={() => navigate to journal home}
           />
@@ -63,7 +64,13 @@ const styles = StyleSheet.create({
   },
   meditateButton: {
     textAlign: 'center',
-    textAlignVertical: 'center'
+    textAlignVertical: 'center',
+    color: 'hsla(28, 100%, 60%, 1)',
+  },
+  journalButton: {
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: 'hsla(241, 64%, 49%, 1)'
   }
 });
 
