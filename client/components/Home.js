@@ -28,11 +28,7 @@ function Home() {
   // will probably need NativeBase to provide a theme throughout the app
   return (
     <NavigationContainer theme={RegulateTheme}>
-        <GreyBackground>
-      {/* <View style={styles.container}> */}
-          {screenToggle ? <AppScreens /> : <AuthScreens />}
-      {/* </View> */}
-        </GreyBackground>
+      {screenToggle ? <AppScreens /> : <AuthScreens />}
     </NavigationContainer>
   );
 };

@@ -22,11 +22,9 @@ export default function AppScreens() {
         backgroundColor: "transparent",
       },
     }}>
-    {/* <GreyBackground> */}
       <Stack.Screen name="WelcomeUser" component={WelcomeUser} />
-      {/* <Stack.Screen name="MeditationHome" component={MeditationHome} />
-      <Stack.Screen name="JournalHome" component={JournalHome} /> */}
-    {/* </GreyBackground> */}
+      <Stack.Screen name="MeditationHome" component={MeditationHome} />
+      <Stack.Screen name="JournalHome" component={JournalHome} />
     </Stack.Navigator>
   );
 };
